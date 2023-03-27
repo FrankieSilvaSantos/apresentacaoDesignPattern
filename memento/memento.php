@@ -4,7 +4,7 @@
 class Memento {
   private $state;
 
-  public function __construct($state) {
+  public function __construct($state) { #permite declarar metodos para a classe
     $this->state = $state;
   }
 
