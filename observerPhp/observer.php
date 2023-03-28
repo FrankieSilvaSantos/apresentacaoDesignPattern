@@ -29,7 +29,7 @@ class ConcreteObservable implements Observable { # implements declara q a classe
   }
 
   public function notifyObservers() {
-    foreach ($this->observers as $observer) { #deficne quais variaveis contem a key e o valor do elemento
+    foreach ($this->observers as $observer) { #deficne quais variaveis contem a key e o valor do
       $observer->update($this->data);
     }
   }
