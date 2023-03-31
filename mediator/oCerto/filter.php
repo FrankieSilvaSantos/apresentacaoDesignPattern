@@ -1,49 +1,49 @@
 <?php
 
-interface Filtro #quais metodos a classe deve implementar
+interface Padaria #quais metodos a classe deve implementar
 {
     public function check();
 }
 
 
-class OleoFiltro implements Filtro # tem que ter os metodos de filter
+class Ingredientes implements Padaria # tem que ter os metodos de padaria
 {
      public function check()
      {
-         echo "Checando o filtro do oleo... OK\n";
+         echo "Checando ingredientes da padaria... OK\n";
      }
 }
 
 
-class ArFiltro implements Filtro
+class FerramentasDeCozinha implements Padaria
 {
      public function check()
      {
-         echo "Checando o filtro de ar... OK\n";
+         echo "Checando ferramentas de cozinha.. OK\n";
      }
 }
 
 // === A Mediador ===
 
-class Carro
+class CoordenacaoPadaria
 {
-    protected $filtros; #so pode ser usado na classe que foi definida
+    protected $padaria; #so pode ser usado na classe que foi definida
 
-    public function adicionarFiltro(Filtro $filtro)
+    public function adicionarPadaria(Padaria $padaria)
     {
-        $this->filtros[] = $filtro;
+        $this->padaria[] = $padaria;
     }
 
     public function check()
     {
-        foreach ($this->filtros as $filtro) {
-            $filtro->check();
+        foreach ($this->padaria as $padaria) {
+            $padaria->check();
         }
     }
 }
 
-$carro = new Carro();
-$carro->adicionarFiltro( new OleoFiltro() );
-$carro->adicionarFiltro( new ArFiltro() );
+$carro = new CoordenacaoPadaria();
+$carro->adicionarPadaria( new Ingredientes() );
+$carro->adicionarPadaria( new FerramentasDeCozinha() );
 $carro->check();
 ?>
