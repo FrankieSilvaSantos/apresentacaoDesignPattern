@@ -42,8 +42,8 @@ class CoordenacaoPadaria
     }
 }
 
-$carro = new CoordenacaoPadaria();
-$carro->adicionarPadaria( new Ingredientes() );
-$carro->adicionarPadaria( new FerramentasDeCozinha() );
-$carro->check();
+$padarias = new CoordenacaoPadaria();
+$padarias->adicionarPadaria( new Ingredientes() );
+$padarias->adicionarPadaria( new FerramentasDeCozinha() );
+$padarias->check();
 ?>
